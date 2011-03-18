@@ -1,0 +1,51 @@
+.uniForm .ctrlHolder {
+	padding: 7px;
+}
+
+#wall{
+	padding: 7px;
+}
+
+#wall li{
+	list-style:none;
+	background-color:#eaebff;
+	padding: 7px;
+	margin: 10px;
+}
+
+#post_form input {
+	width: 100px;
+	height: 38px;
+	cursor: pointer;
+	cursor: hand;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.poster{
+	float:left;
+	display:inline;
+	min-height: 100%;
+    height: auto;
+	width:20%;
+}
+
+.post{
+	font-size:1.5em;
+	margin: 1px;
+	float:left;
+	display:inline;
+	width:75%;
+}
+
+#share_button img{
+	width:60px;
+	height:23px;
+}
+
+.bottom_div{
+	text-align:right;
+	font-size:1.0em;
+}
+

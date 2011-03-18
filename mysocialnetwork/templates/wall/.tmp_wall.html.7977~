@@ -1,0 +1,66 @@
+{% extends "wall/base.html" %}
+
+{% load i18n %}
+{% load uni_form_tags %}
+{% load avatar_tags %}
+{% load pagination_tags %}
+ 
+{% block head_title %}{% blocktrans %}Wall{% endblocktrans %}{% endblock %}
+{% block body %}
+	<div id="main_div">
+	<h1>
+        {% ifequal list 'all' %}
+            {% trans "All posts" %}
+        {% endifequal %}
+        {% ifequal list 'yours' %}
+            {% trans "Your Posts" %}
+        {% endifequal %}
+    </h1>
+
+	<form id="post_form" enctype="multipart/form-data" method="POST" action="/wall/add/" class="uniForm">
+			{% csrf_token %}
+            {{ post_form|as_uni_form }}
+			<input type="hidden" name="previous_list" value="{{ list }}"/>
+            <div class="form_block">
+                <input type="image" src="{{ STATIC_URL }}wall/img/share_button.png" value="{% trans 'Post' %}">
+            </div>
+    </form>
+
+    {% autopaginate posts 5 %}
+	<ul id="wall">
+	{% for post in posts %}
+		<li>
+			<div>
+				<div class="poster">
+					 <p class="meta">
+		                <!-- meta -->
+		                <div class="avatar" >{% avatar post.publisher 40 %}</div>
+		                <div class="details">{% blocktrans %}posted by{% endblocktrans %} <a href="{% url profile_detail post.publisher.username %}">{{ post.publisher }}</a></div>{% blocktrans %}on{% endblocktrans %} {{ post.pub_date|date }}
+		            </p>
+				</div>
+				<div class="post">
+					{{ post.text }}
+				</div>
+				<div class="cleardivs" />
+				<div class="likes">#{{ post.likes|length }}
+						&nbsp;<a  id="like" href=" {% url like post.uuid %}">Like</a>
+						&nbsp;#{{ post.dislikes|length }}
+						<a  id="dislike" href=" {% url dislike post.uuid %}">Dislike</a>
+				</div>
+			</div>
+			
+		</li>
+		{% for comment in post.comments_set %}
+		<div class="comment">
+			<p>{{ comment.text }} {% trans "posted by" %}  {{ comment.comentator }}</p>
+			<p>{{ comment.pub_date }} </p>
+		</div>
+		{% endfor %}
+	{% empty %}	
+		<div class="noposts">
+			<p>{% blocktrans %}No posts available{% endblocktrans %}</p>
+		</div>
+	{% endfor %}
+	</div>
+	{% paginate %}
+{% endblock %}

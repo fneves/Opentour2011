@@ -1,0 +1,18 @@
+{% extends "site_base.html" %}
+ 
+{% load i18n %}
+ 
+{% block rtab_id %}id="wall_tab"{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}wall/css/wall.css" />
+{% endblock %} 
+
+{% block body_class %}wall{% endblock %}
+
+{% block subnav %}
+    <ul>
+        <li><a href="{% url all_posts %}">{% trans "All posts" %}</a></li>
+        <li><a href="{% url your_posts %}">{% trans "Your posts" %}</a></li>
+    </ul>
+{% endblock %}

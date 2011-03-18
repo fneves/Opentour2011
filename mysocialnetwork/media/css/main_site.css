@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+	width: 100%;
+}
+
+body {
+	margin-top:0px;
+}
+
+#body{
+	padding-top:10px;
+	width: 981px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.shadow {
+	-moz-box-shadow: 3px 3px 4px #808080;
+	-webkit-box-shadow: 3px 3px 4px #808080;
+	box-shadow: 3px 3px 4px #808080;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#808080')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#808080');
+}
+
+ul.tabs li {
+   display:list-item;
+   background-color:#f9f7f9;
+}
+
+#tabhead {
+	border-bottom:0px;
+}
+
+#tabhead .logo {
+ height: 40px;
+}
+
+#tabhead .logo img {
+	width: 180px;
+	height: 40px;
+}
+
+#subnav{
+	border-bottom : 0px;
+	background: #FFF; /* tab colour */
+}
+
+#left_tabs {
+	float:left;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	min-height: 600px;
+	position:relative;
+	left:auto;
+}
+
+#mainsheet {
+	float: left;
+	display: inline;
+	min-width:750px;
+	min-height: 600px;
+	max-width:745px;
+	padding-left:15px;
+	padding-right: 15px;
+	word-wrap: break-word;
+}
+
+#right_tabs {
+	float:left;
+	display: inline;
+}
+
+div.cleardivs {
+	clear:both;
+}

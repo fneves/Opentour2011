@@ -1,0 +1,19 @@
+{% extends "site_base.html" %}
+
+{% load socialregistration_tags %}
+{% block body %}
+<h1>Setup</h1>
+
+{% if error %}
+	<p>Your session timed out. Please try again.</p>
+{% else %}
+	<form action="." method="post">
+	    <table>
+	        {{ form }}
+	    </table>
+	    {% social_csrf_token %}
+	    <input type="submit" value="save" />
+	</form>
+{% endif %}
+{% endblock %}
+
