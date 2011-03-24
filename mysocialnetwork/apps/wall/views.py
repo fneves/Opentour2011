@@ -63,7 +63,7 @@ def share(request,uuid):
     user = facebook.get_user_from_cookie(request.COOKIES, settings.FACEBOOK_API_KEY, settings.FACEBOOK_SECRET_KEY)
     if user:
         graph = facebook.GraphAPI(user["access_token"])
-        graph.put_wall_post(message=post.text,profile_id="204610592888525")
+        graph.put_wall_post(message=post.text,profile_id="129427383797915")
     
     return HttpResponseRedirect(reverse("wall.views.allposts"))
 
