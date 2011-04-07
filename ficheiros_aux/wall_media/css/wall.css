@@ -1,0 +1,22 @@
+#wall{
+	padding: 7px;
+}
+
+#wall li{
+	list-style:none;
+	background-color:#eaebff;
+	padding: 7px;
+	margin: 10px;
+}
+#post_form input {
+		width: 100px;
+		height: 38px;
+		cursor: pointer;
+		cursor: hand;
+		margin-top: 10px;
+		margin-left: 10px;
+		margin-top: 10px;
+}
+.post{
+font-size:1.5em;
+}
